@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Amazon Connect Calculator</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Pricing calculator Amazon Connect">
+	<meta name="keywords" content="AWS Connect, Amazon Connect, Amazon Web Services, Cost, Pricing, Calculator">
+	<meta name="robots" content="index,follow">
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-100306227-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</head>
+
+<body id="top">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="#" class="image avatar"><img src="images/avatar.png" alt="" /></a>
+		<h1><strong>Amazon Connect Cost Calculator</strong><br/>
+				Designed by Michael ONan</a><br/>
+				Check out my <a href="https://onan-labs.com">blog</a>.</h1>
+	</header>
+
+	<!-- Main -->
+	<div id="main">
+		<section id="one">
+			<header class="major">
+				<h2>Amazon Connect Calculator <code>(beta)</code></h2>
+			</header>
+			<div class="row">
+                <span><h4>Enter number of DAILY minutes and phone numbers needed. Current <a href="https://aws.amazon.com/connect/pricing/">AWS Rates</a></h4></span>
+				<div class="7u 12u$(small)">
+					<form method="post" action="#">
+						<div class="row uniform 50%">
+                            <div class="12u$">
+								<input type="number" name="local-number" id="local-number" placeholder="How Many Local Numbers?" />
+							</div>
+							<div class="12u$">
+								<input type="number" name="toll-free-number" id="toll-free-number" placeholder="How Many Toll Free Numbers?" />
+							</div>
+                            <div class="12u$">
+								<input type="number" name="inbound-did-minutes" id="inbound-did-minutes" placeholder="How Many Inbound DID Minutes?" />
+							</div>
+							<div class="12u$">
+								<input type="number" name="inbound-toll-free-minutes" id="inbound-toll-free-minutes" placeholder="How Many Inbound Toll Free Minutes?" />
+							</div>
+                            <div class="12u$">
+								<input type="number" name="outbound-minutes" id="outbound-minutes" placeholder="How Many Outbound Minutes?" />
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="5u$ 12u$(small)">
+					<ul class="labeled-icons">
+                        <li>
+                            <h3 class="icon fa-fax"><span class="label">Local Telephone Number</span></h3>
+							<a href="#">Local Telephone Number</a>
+						</li>
+						<li>
+							<h3 class="icon fa-phone"><span class="label">Toll Free Number</span></h3>
+							<a href="#">Toll Free Number</a>
+						</li>
+                        <li>
+                            <h3 class="icon fa-fax"><span class="label">Inbound DID Minutes</span></h3>
+							<a href="#">Inbound DID Minutes</a>
+						</li>
+						<li>
+							<h3 class="icon fa-phone"><span class="label">Inbound Toll Free Minutes</span></h3>
+							<a href="#">Inbound Toll Free Minutes</a>
+						</li>
+                        <li>
+							<h3 class="icon fa-sign-out"><span class="label">Outbound Minutes</span></h3>
+							<a href="#">Outbound Minutes</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<hr/>
+            <span><h4>Daily Cost</h4></span>
+			<table>
+				<tr>
+					<th>Minute Usage</th>
+					<th>Telephone Number Cost</th>
+					<th>Service Usage</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+					<td>$<span id="daily-minute-usage">-</span></td>
+					<td>$<span id="daily-telephone-number-cost">-</span></td>
+					<td>$<span id="daily-service-usage">-</span></td>
+					<th>$<span id="daily-connect-total-cost">-</span></td>
+				</tr>
+			</table>
+            <hr/>
+            <span><h4>Monthly Cost -- Daily Cost x 30 Days</h4></span>
+			<table>
+				<tr>
+					<th>Minute Usage</th>
+					<th>Telephone Number Cost</th>
+					<th>Service Usage</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+					<td>$<span id="monthly-minute-usage">-</span></td>
+					<td>$<span id="monthly-telephone-number-cost">-</span></td>
+					<td>$<span id="monthly-service-usage">-</span></td>
+					<th>$<span id="monthly-connect-total-cost">-</span></td>
+				</tr>
+			</table>
+            <hr/>
+            <span><h4>Yearly Cost -- Daily Cost x 365 Days</h4></span>
+			<table>
+				<tr>
+					<th>Minute Usage</th>
+					<th>Telephone Number Cost</th>
+					<th>Service Usage</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+					<td>$<span id="yearly-minute-usage">-</span></td>
+					<td>$<span id="yearly-telephone-number-cost">-</span></td>
+					<td>$<span id="yearly-service-usage">-</span></td>
+					<th>$<span id="yearly-connect-total-cost">-</span></td>
+				</tr>
+			</table>
+		</section>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<ul class="icons">
+			<li><a href="https://twitter.com/Michael_Onan" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="https://linkedin.com/in/michaelonan" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			<li><a href="https://onan-labs.com" class="icon fa-wordpress"><span class="label">Blog</span></a></li>
+			<li><a href="mailto:mike@onanlabs.com" class="icon fa-envelope-o"><span class="label"></span></a></li>
+		</ul>
+		<ul class="copyright">
+			<li>&copy; Michael ONan (<a href="https://onan-labs.com">Onan Labs</a>)</li>
+			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>
